@@ -1,0 +1,30 @@
+body{
+  margin: 0;
+  background-color: white;
+  color: #19181C;
+  padding: 0;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+}
+
+form {
+  background:white;
+  padding: 10%;
+  margin:40px auto;
+}
+
+.userContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+}
+
+.option1{
+  border: none;
+  display: block;
+}
+
+button{
+  margin: 3%;
+}
