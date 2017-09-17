@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ItemCard from './ItemCard';
+import OrderStatus from './OrderStatus';
 
 
 class UserCard extends Component {
@@ -9,24 +10,33 @@ class UserCard extends Component {
 		this.state = {
 			isAccepted: false,
 			isRejected: false,
-		};
+			isStatus: 0,
+			};
 
 		this.acceptHandler = this.acceptHandler.bind(this);
 		this.rejectHandler = this.rejectHandler.bind(this);
-
+		this.statusHandler = this.statusHandler.bind(this);
 	}
 
 	acceptHandler() {
 		this.setState({
 			isAccepted: true,
-			isRejected: true
-		})
+			isRejected: true,
+			isStatus: 2,
+			})
 	}
 
 	rejectHandler() {
 		this.setState({
 			isRejected: true,
-			isAccepted: true
+			isAccepted: true,
+			isStatus: 3,
+			})
+	}
+
+	statusHandler(){
+		this.setState({
+			isStatus: 1,
 		})
 	}
 
@@ -38,8 +48,8 @@ class UserCard extends Component {
 
 							<div className="row">
 						  		<div className='order_status col col-xs-1'>
-						      		<span><b>{this.props.order.order_state}</b></span>
-						      </div>
+		          			<OrderStatus status={this.props.statusHandler} />
+									</div>
 
 						      <div className='order_number col col-xs-2'>
 						           <span># {this.props.order.order_id}</span><br/>
@@ -74,7 +84,8 @@ class UserCard extends Component {
 										{!this.state.isAccepted &&
 										<button type="button"
 										className="btn"
-										onClick={this.acceptHandler}>
+										onClick={this.acceptHandler}
+										>
 										Confirm
 										</button>
 										}

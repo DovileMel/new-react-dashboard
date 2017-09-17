@@ -8,7 +8,7 @@ const orders = [
     first_name: "Bob",
     last_name: "Smith",
     profile_pic: "https://pbs.twimg.com/profile_images/603186128498352129/JDjHgMqy.jpg",
-    order_state: "ready",
+    order_state: 0,
     order_id: 1,
     order_total: "14.85",
     order_quantity: 15,
@@ -42,7 +42,7 @@ const orders = [
      "first_name":"Tom",
      "last_name":"Jones",
      "profile_pic":"https://scontent.xx.fbcdn.net/v/t1.0-1/13418961_277642839256124_4506559117913217746_n.jpg?oh=adf87ef60bc88fae73ddd6588621515a&oe=59A95372",
-     "order_state":"pended",
+     "order_state":0,
      "order_id":2,
      "order":[
         {
